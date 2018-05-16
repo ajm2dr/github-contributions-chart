@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { drawContributions } from "github-contributions-canvas";
 import { download, uploadToTwitter, fetchData } from "./utils/export";
 import loadingImage from "./loading.gif";
+import { drawLineChart } from "./contributions-linechart.js"
 import "./App.css";
 
 class App extends Component {
@@ -84,7 +85,7 @@ class App extends Component {
         error: "Something went wrong... Check back later."
       });
     }
-    drawContributions(this.canvas, {
+    drawLineChart(this.canvas, {
       data: this.state.data,
       username: this.state.username,
       themeName: this.state.theme,
